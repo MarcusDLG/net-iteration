@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using DotnetIteration.Models;
@@ -27,7 +26,9 @@ namespace DotnetIteration
    */
     public static IEnumerable<string> Yelling(List<string> words)
     {
-      throw new System.NotImplementedException();
+      return words.Select(word => word.ToUpper());
+      // var yell = words.Select(word => { return word.ToUpper(); });
+      // return yell;
     }
 
     /* 
@@ -38,7 +39,8 @@ namespace DotnetIteration
 
     public static IEnumerable<int> Double(List<int> numbers)
     {
-      throw new System.NotImplementedException();
+      var doubleTrouble = numbers.Select(number => number * 2);
+      return doubleTrouble; //return numbers.Select(number => number * 2);
     }
     /*
       * 3) Define a function stringyIndexes() that takes an list of
@@ -47,7 +49,8 @@ namespace DotnetIteration
       */
     public static IEnumerable<string> StringyIndexes(List<string> data)
     {
-      throw new System.NotImplementedException();
+      return data.Select((database, index) => $"{database} is at index {index}");
+
     }
     /*
        * 4) Define a function onlyTheEvenSurvive that accepts an list of
@@ -56,7 +59,9 @@ namespace DotnetIteration
 
     public static IEnumerable<int> OnlyTheEvenSurvive(List<int> data)
     {
-      throw new System.NotImplementedException();
+      return data.Where(divisible => divisible % 2 == 0);
+      // throw new System.NotImplementedException();
+
     }
     /*
         * 5) Define a function onlyTheEvenIndexedSurvive that accepts an list of
@@ -64,7 +69,8 @@ namespace DotnetIteration
         */
     public static IEnumerable<int> OnlyTheEvenIndexedSurvive(List<int> data)
     {
-      throw new System.NotImplementedException();
+      return data.Where((numbers, index) => index % 2 == 0);
+      // throw new System.NotImplementedException();
     }
     /*
       * 6)  Define a function bestMoviesOfTheYear that accepts an list of
@@ -81,18 +87,22 @@ namespace DotnetIteration
       */
     public static IEnumerable<string> BestMovieOfTheYear(List<Movie> data, int year)
     {
-      throw new System.NotImplementedException();
+
+      return data.Where(movie => movie.Score > 90 && movie.Year == year).Select(movie => movie.Name);
+
+
     }
 
     /*
       * 7) Define a function everyoneIsOdd that accepts an list of
       * numbers and returns true if every element of the list is
-      * odd.
+      * odd. % 2 == 1
       */
 
     public static bool EveryoneIsOdd(List<int> data)
     {
-      throw new System.NotImplementedException();
+      return data.All(data => data % 2 == 1);
+
     }
     /*
       * 8) Define a function findTheNeedle that accepts an list of
@@ -101,7 +111,7 @@ namespace DotnetIteration
       */
     public static string FindTheNeedle(List<string> data)
     {
-      throw new System.NotImplementedException();
+      return data.Single(needle => needle.Contains("needle"));
     }
 
 
@@ -113,7 +123,7 @@ namespace DotnetIteration
 
     public static int FindTheNeedleIndex(List<string> data)
     {
-      throw new System.NotImplementedException();
+      return data.FindIndex(needle => needle.Contains("needle"));
     }
 
     /*
@@ -125,7 +135,7 @@ namespace DotnetIteration
 
     public static bool SomeoneToLove(List<string> data)
     {
-      throw new System.NotImplementedException();
+      return data.Any(word => word.Length == 4);
     }
   }
 
