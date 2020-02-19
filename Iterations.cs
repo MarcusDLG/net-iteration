@@ -125,6 +125,8 @@ namespace DotnetIteration
     {
       return data.FindIndex(needle => needle.Contains("needle"));
     }
+    // I used the FindIndex function and passed in data, created a variable called needle, 
+    // and will search through data and return the index of the word needle.
 
     /*
       *` 10)  Define a function someoneToLove that accepts an list of
