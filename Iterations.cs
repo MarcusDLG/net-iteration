@@ -39,8 +39,8 @@ namespace DotnetIteration
 
     public static IEnumerable<int> Double(List<int> numbers)
     {
-      var doubleTrouble = numbers.Select(number => number * 2);
-      return doubleTrouble; //return numbers.Select(number => number * 2);
+      return numbers.Select(number => number * 2);
+      //return numbers.Select(number => number * 2);
     }
     /*
       * 3) Define a function stringyIndexes() that takes an list of
